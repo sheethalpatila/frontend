@@ -39,7 +39,7 @@ const StripeCheckout = ({
     const headers = {
       "Content-Type": "application/json"
     };
-    return fetch(`${API}stripePayment`, {
+    return fetch(`${API}/stripePayment`, {
       method: "POST",
       headers,
       body: JSON.stringify(body)

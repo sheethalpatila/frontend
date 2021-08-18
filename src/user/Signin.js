@@ -4,16 +4,14 @@ import Base from '../core/Base';
 
 import {signin ,authenticate, isAuthenticated } from "../auth/helper"
 
-
 const Signin = () =>{
-
     const [values , setValues] = useState({
-        email:"praveen@gmail.com",
-        password:"praveen123",
+        email:"",
+        password:"",
         error:"",
         loading:false,
         didRedirect:false
-    })
+    });
 
     // destructure 
     const {email , password,error , loading ,didRedirect} = values
@@ -22,8 +20,8 @@ const Signin = () =>{
 
     //handling on change  values
     const handleChange = name => event =>{
-        return(
-        setValues({...values , error:false , [name] : event.target.value}))
+        
+        setValues({...values , error:false , [name] : event.target.value});
     };
 //on submit 
 
@@ -49,10 +47,9 @@ const onSubmit = event => {
     //jusdging method so  should we have to redirect or not 
     const performRedirect = () =>{
         if(didRedirect){
-             
              if(user && user.role === 1){
                   return <Redirect to="/admin/dashboard"/>;//to admin page
-             }else {
+             } else {
                    return <Redirect to="/user/dashboard"/>;//to user page
              }  
          }
@@ -82,7 +79,7 @@ const errorMassage = () => {
                 </div>
             </div>
         </div>
-     )
+     );
 };
 
 

@@ -31,7 +31,7 @@ export const getAllCategories = () => {
 
      //get a single category
      export const getCategory = categoryId => {
-    return fetch(`${API}category/${categoryId}` , {
+    return fetch(`${API}/category/${categoryId}` , {
       method:"GET"
   }).then(response => {
     return response.json();
@@ -40,7 +40,7 @@ export const getAllCategories = () => {
 }
     //delete product
     export const deleteCategory = (categoryId,userId , token ) => {
-      return fetch(`${API}category/${categoryId}/${userId}` , {
+      return fetch(`${API}/category/${categoryId}/${userId}` , {
           method : "DELETE",
           headers:{
               Accept:"application/json",
@@ -54,7 +54,7 @@ export const getAllCategories = () => {
   }
     //update category 
     export const updateCategory= (categoryId,userId , token , category) => {
-      return fetch(`${API}category/${categoryId}/${userId}` , {
+      return fetch(`${API}/category/${categoryId}/${userId}` , {
           method : "PUT",
           headers:{
               Accept:"application/json",
@@ -86,7 +86,7 @@ export const createProduct = (userId , token , product) => {
 
 //get all the products
 export const getAllProducts = () => {
-    return fetch(`${API}product`, {
+    return fetch(`${API}/product`, {
       method: "GET"
     })
       .then(response => {
@@ -111,7 +111,7 @@ export const getProduct = productId => {
 //update a product
 
 export const updateProduct = (productId,userId , token , product) => {
-    return fetch(`${API}product/${productId}/${userId}` , {
+    return fetch(`${API}/product/${productId}/${userId}` , {
         method : "PUT",
         headers:{
             Accept:"application/json",
@@ -126,7 +126,7 @@ export const updateProduct = (productId,userId , token , product) => {
 
 //delete a product 
 export const deleteProduct = (productId,userId , token ) => {
-    return fetch(`${API}product/${productId}/${userId}` , {
+    return fetch(`${API}/product/${productId}/${userId}` , {
         method : "DELETE",
         headers:{
             Accept:"application/json",
