@@ -35,7 +35,7 @@ const Home = () =>{
                 <div className="row ">
                     {products.map((product , index)=>{
                         return (
-                            <div key={index} className="col col-lg-3 col-md-6 col-sm-6 col-xs-6 mb-4">
+                            <div key={index} className="col col-lg-3 col-md-6 col-sm-8 col-xs-6 mb-4">
                                 <Card product ={product}/>
                             </div>
                         )
