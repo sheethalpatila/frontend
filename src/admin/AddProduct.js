@@ -54,9 +54,9 @@ const AddProducts = () => {
         
         
       );
-      //if product is created then edirect to admin home after 7seconds
+      //if product refresh page and empty the state
   if(createdProduct){
-    setTimeout(function(){ window.location="/admin/dashboard"; },7000);
+    setValues([])
   }
       
     const errorMessage = () => {
