@@ -2,8 +2,8 @@ import React  , {useState ,useEffect}from 'react';
 import '../styles.css';
 import { API } from '../backend';
 import Base from './Base';
-import Card from './Card';
-import getProducts from './helper/coreapicalls';
+import Card from './Card'; 
+import { getAllProducts } from '../admin/helper/adminapicall';
 
 
 const Home = () =>{
@@ -14,7 +14,7 @@ const Home = () =>{
     //create a method to load all products
 
     const loadAllProducts = () => {
-        getProducts().then(data => {
+        getAllProducts().then(data => {
             if(data.error){
                 setError(data.error)
             }else {
